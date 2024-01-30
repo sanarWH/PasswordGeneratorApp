@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         var passwordLength: Int = 10
         var isUppercaseRange: Boolean = false
         var isLowercaseRange: Boolean = false
@@ -20,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         var isSpecialRange: Boolean = false
 
         var edPasswordLength = findViewById<EditText>(R.id.et_password_length)
+//        var userInput = edPasswordLength.text.toString()
+//        var passwordLength: Int? = userInput.toIntOrNull() ?: 1
 
 
         var switchUppercaseRange = findViewById<Switch>(R.id.switch_uppercase)
@@ -62,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             if (isLowercaseRange == true) userCustomRange += lowercaseRange
             if (isNumbersRange == true) userCustomRange += numberRange
             if (isSpecialRange == true) userCustomRange += symbolRange
-            val password = passwordGenerator(passwordLength, userCustomRange)
+            val password = passwordGenerator(passwordLength!!, userCustomRange)
             var resultGeneration = findViewById<TextView>(R.id.tv_result_generation)
             resultGeneration.setText(password)
         }
