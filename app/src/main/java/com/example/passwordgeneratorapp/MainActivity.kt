@@ -1,11 +1,15 @@
 package com.example.passwordgeneratorapp
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +70,18 @@ class MainActivity : AppCompatActivity() {
             val password = passwordGenerator(passwordLength!!, userCustomRange)
             var resultGeneration = findViewById<TextView>(R.id.tv_result_generation)
             resultGeneration.setText(password)
+        }
+
+        var buttonCopyText = findViewById<Button>(R.id.btn_copy)
+        var tvResultGeneration = findViewById<TextView>(R.id.tv_result_generation)
+        buttonCopyText.setOnClickListener {
+            val textToCopy = tvResultGeneration.text.toString()
+
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText("text", textToCopy)
+            clipboardManager.setPrimaryClip(clipData)
+
+            Toast.makeText(this, "Text copied to clipboard", Toast.LENGTH_SHORT).show()
         }
 
     }
