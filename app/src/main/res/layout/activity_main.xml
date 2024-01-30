@@ -9,19 +9,56 @@
     android:padding="20dp"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageButton
+            android:id="@+id/btn_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/raisinBlack"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PASSWORD GENERATOR"
+            android:textColor="@color/green"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_language"
+            app:layout_constraintStart_toEndOf="@+id/btn_menu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_language"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:background="@color/raisinBlack"
+            android:src="@drawable/ic_language"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         style="@style/tvStyleForBoldText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="LENGTH" />
+        android:text="@string/length" />
 
     <EditText
         android:id="@+id/et_password_length"
         style="@style/tvStyleForNonBoldText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="enter password length:"
+        android:hint="@string/hint_enter_password_length"
         android:textColorHint="@color/colorForHint"
         android:inputType="number"
         android:imeOptions="actionDone"
@@ -32,35 +69,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="SETTINGS" />
+        android:text="@string/settings" />
 
     <Switch
         android:id="@+id/switch_uppercase"
         style="@style/styleForSwitch"
         android:layout_marginTop="20dp"
         android:gravity="center_vertical"
-        android:text="UPPERCASE (ABC)"
+        android:text="@string/uppercase"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
         android:id="@+id/switch_lowercase"
         style="@style/styleForSwitch"
         android:layout_marginTop="20dp"
-        android:text="LOWERCASE (abc)"
+        android:text="@string/lowercase"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
         android:id="@+id/switch_numbers"
         style="@style/styleForSwitch"
         android:layout_marginTop="20dp"
-        android:text="NUMBERS (123)"
+        android:text="@string/numbers"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
         android:id="@+id/switch_special"
         style="@style/styleForSwitch"
         android:layout_marginTop="20dp"
-        android:text="SPECIAL ($#!)"
+        android:text="@string/special"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
@@ -69,7 +106,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:text="GENERATE PASSWORD" />
+        android:text="@string/btn_generate_password" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,14 +121,14 @@
             style="@style/tvStyleForNonBoldText"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Y0uRPA$$w0Rd123" />
+            android:text="@string/result_generation" />
 
         <Button
             android:id="@+id/btn_copy"
             style="@style/btnStyleForNonBoldText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="COPY" />
+            android:text="@string/btn_copy" />
     </LinearLayout>
 
 </LinearLayout>

@@ -1,15 +1,20 @@
 package com.example.passwordgeneratorapp
 
+import android.app.LocaleManager
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat.recreate
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 //        var userInput = edPasswordLength.text.toString()
 //        var passwordLength: Int? = userInput.toIntOrNull() ?: 1
 
-
+//        Ниже идет подключение и использование свичей
         var switchUppercaseRange = findViewById<Switch>(R.id.switch_uppercase)
         switchUppercaseRange.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
@@ -60,6 +65,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+//        Ниже реализована функция передачи значений в метод и генерация пароля на основании выбранных свичей
         var buttonGenerate = findViewById<Button>(R.id.btn_generate)
         buttonGenerate.setOnClickListener {
             userCustomRange = listOf()
@@ -72,6 +78,7 @@ class MainActivity : AppCompatActivity() {
             resultGeneration.setText(password)
         }
 
+//        Ниже реализована функция копирования сгенерированного пароля в буфер обмена
         var buttonCopyText = findViewById<Button>(R.id.btn_copy)
         var tvResultGeneration = findViewById<TextView>(R.id.tv_result_generation)
         buttonCopyText.setOnClickListener {
@@ -82,6 +89,11 @@ class MainActivity : AppCompatActivity() {
             clipboardManager.setPrimaryClip(clipData)
 
             Toast.makeText(this, "Text copied to clipboard", Toast.LENGTH_SHORT).show()
+        }
+
+        val switchLanguage = findViewById<ImageButton>(R.id.btn_language)
+        switchLanguage.setOnClickListener {
+
         }
 
     }
@@ -100,4 +112,8 @@ fun passwordGenerator(lengthPassword: Int, userCustomRange: List<Any>): String {
         password += userCustomRange.random().toString()
     }
     return password
+}
+
+fun switchLanguage(){
+
 }
