@@ -3,7 +3,7 @@
     <style name="Base.Theme.PasswordGeneratorApp" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-        <item name="android:statusBarColor">@color/green</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/raisinBlack</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>
