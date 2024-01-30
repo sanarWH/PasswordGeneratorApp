@@ -20,7 +20,12 @@
         android:id="@+id/et_password_length"
         style="@style/tvStyleForNonBoldText"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:hint="enter password length:"
+        android:textColorHint="@color/colorForHint"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        android:backgroundTint="@color/white"/>
 
     <TextView
         style="@style/tvStyleForBoldText"
