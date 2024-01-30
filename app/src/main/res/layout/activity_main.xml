@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/raisinBlack"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@color/raisinBlack"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,9 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="LENGHT" />
+        android:text="LENGTH" />
 
     <EditText
+        android:id="@+id/et_password_length"
         style="@style/tvStyleForNonBoldText"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
@@ -29,6 +30,7 @@
         android:text="SETTINGS" />
 
     <Switch
+        android:id="@+id/switch_uppercase"
         style="@style/styleForSwitch"
         android:layout_marginTop="20dp"
         android:gravity="center_vertical"
@@ -36,24 +38,28 @@
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
+        android:id="@+id/switch_lowercase"
         style="@style/styleForSwitch"
         android:layout_marginTop="20dp"
         android:text="LOWERCASE (abc)"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
+        android:id="@+id/switch_numbers"
         style="@style/styleForSwitch"
         android:layout_marginTop="20dp"
         android:text="NUMBERS (123)"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Switch
+        android:id="@+id/switch_special"
         style="@style/styleForSwitch"
         android:layout_marginTop="20dp"
         android:text="SPECIAL ($#!)"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
+        android:id="@+id/btn_generate"
         style="@style/btnStyleForNonBoldText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -69,10 +75,11 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/tv_result_generation"
             style="@style/tvStyleForNonBoldText"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Y0uRPA$$w0Rd123"/>
+            android:text="Y0uRPA$$w0Rd123" />
 
         <Button
             style="@style/btnStyleForNonBoldText"
