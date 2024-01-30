@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">PasswordGeneratorApp</string>
+    <string name="app_name">PasswordGeneratorApp</string>
     <string name="length">LENGTH</string>
     <string name="hint_enter_password_length">enter password length:</string>
     <string name="settings">SETTINGS</string>
@@ -8,6 +8,6 @@
     <string name="numbers">NUMBERS (123)</string>
     <string name="special">SPECIAL ($#!)</string>
     <string name="btn_generate_password">GENERATE PASSWORD</string>
-    <string name="result_generation" translatable="false">Y0uRPA$$w0Rd123</string>
+    <string name="result_generation">Y0uRPA$$w0Rd123</string>
     <string name="btn_copy">COPY</string>
 </resources>
